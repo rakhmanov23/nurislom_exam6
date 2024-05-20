@@ -1,0 +1,6 @@
+# task send message to email with celery
+
+
+celery -A root worker -l INFO
+celery -A root.celery.app flower --port=5001
+celery -A root  beat -l info --scheduler django_celery_beat.schedulers:DatabaseScheduler
